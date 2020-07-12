@@ -1,0 +1,83 @@
+/*
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: blue;
+  --purple: rgb(61, 25, 91);
+  --aqua: rgb(0, 255, 135);
+  --gradient: linear-gradient(90deg, rgba(0, 255, 135, 1) 0%, rgba(61, 25, 91, 1) 100%);
+  --p-1: 1rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.logo--small {
+  height: 100px;
+  width: 100px;
+  margin: 0 2rem 0 0;
+  float: left;
+}
+
+.box {
+  background-color: var(--primary-color);
+  width: 80%;
+  background: rgba(240, 248, 255, 0.7) /*aliceblue*/;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+header {
+  background: var(--gradient);
+  padding-bottom: var(--p-1);
+  min-height: 30vh;
+}
+
+.header__masthead {
+  display: flex;
+  justify-content: center;
+}
+
+.header__description {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  margin: 0 auto;
+  background-color: rgb(240, 255, 255, 1);
+  height: 80vh;
+  padding: var(--p-1);
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 680px) {
+  main {
+    width: 90%;
+  }
+
+  .title--h1 {
+    font-size: 3rem;
+  }
+}
+
+footer {
+  height: 5vh;
+  text-align: center;
+  margin: 0.2rem 0 1rem 0;
+}
+
+.title--h1 {
+  margin: 1rem 0;
+  color: #fff;
+  text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
