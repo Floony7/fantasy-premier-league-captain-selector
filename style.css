@@ -18,6 +18,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.p1 {
+  padding: var(--p-1);
+}
+
 .logo--small {
   height: 100px;
   width: 100px;
@@ -25,9 +29,61 @@ body {
   float: left;
 }
 
+.full-width-container {
+  width: 100%;
+}
+
+.full-width-container--form {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .container--body {
   padding-top: 1rem;
   width: 55%;
+  margin: 0 auto;
+}
+
+.row-flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* .row-flex-2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+} */
+
+.form-container {
+  padding-bottom: var(--p-1);
+  width: 100%;
+}
+
+.player-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.input-field {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.flex-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  min-height: 250px;
 }
 
 .box {
@@ -58,12 +114,35 @@ header {
 }
 
 main {
-  background-color: rgba(135, 206, 235, 0.7);
-  height: 80vh;
+  /* background-color: rgba(135, 206, 235, 0.7); */
+  background-color: #dfdbe5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  min-height: 80vh;
   margin-top: 0;
   width: 100%;
 }
 
+/* Players list */
+/* .players {
+  margin: 0 auto;
+  width: 80%;
+  padding: var(--p-1);
+  text-align: center;
+} */
+
+.players-list-container {
+  background-color: rgba(135, 206, 235, 0.7);
+  padding: 0.2rem 0.5rem 0.5rem 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.go-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Media Queries */
 @media only screen and (max-width: 680px) {
   main {
     width: 90%;
@@ -93,4 +172,9 @@ footer {
   margin: 1rem 0;
   color: #fff;
   text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* label color */
+.input-field label {
+  color: #000;
 }
