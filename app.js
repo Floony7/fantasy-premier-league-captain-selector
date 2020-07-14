@@ -1,3 +1,25 @@
+// Elements
+const goButton = document.querySelector("[data-go-button]")
+const card = document.querySelector(".card")
+const captain = document.querySelector("[data-captain]")
+captain.innerHTML = "?"
+
+// Event listeners
+goButton.addEventListener("click", (e) => {
+  captain.innerHTML = ""
+  card.classList.add("flip")
+})
+
+function removeClass(e) {
+  if (e.propertyName !== "transform") return
+  this.classList.remove("flip")
+  setTimeout(() => {
+    captain.innerHTML = "Antonio"
+  }, 1000)
+}
+
+card.addEventListener("transitionend", removeClass)
+
 // Display current year
 const yearEl = document.querySelector("#year")
 const displayYear = new Date().getFullYear()

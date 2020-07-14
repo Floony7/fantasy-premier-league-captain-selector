@@ -18,6 +18,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.m0 {
+  margin: 0;
+}
+
 .p1 {
   padding: var(--p-1);
 }
@@ -35,12 +39,6 @@ body {
 
 .full-width-container--form {
   background-color: rgba(0, 0, 0, 0.2);
-}
-
-.container--body {
-  padding-top: 1rem;
-  width: 55%;
-  margin: 0 auto;
 }
 
 .row-flex {
@@ -82,12 +80,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 80%;
   min-height: 250px;
 }
 
 .box {
-  background-color: var(--primary-color);
   width: 80%;
   background: rgba(240, 248, 255, 0.7) /*aliceblue*/;
   margin-top: 1rem;
@@ -122,13 +119,20 @@ main {
   width: 100%;
 }
 
-/* Players list */
-/* .players {
+/* Player's area */
+.container--body-grid {
+  padding-top: 1rem;
+  width: 55%;
   margin: 0 auto;
-  width: 80%;
-  padding: var(--p-1);
-  text-align: center;
-} */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.container--body {
+  padding-top: 1rem;
+  width: 55%;
+  margin: 0 auto;
+}
 
 .players-list-container {
   background-color: rgba(135, 206, 235, 0.7);
@@ -142,6 +146,20 @@ main {
   margin-bottom: 1rem;
 }
 
+.card {
+  background-image: url("/crowd.jpg");
+  background-size: cover;
+  background-color: var(--turqoise);
+  background-blend-mode: multiply;
+  perspective: 1000px;
+  transition: transform 1s cubic-bezier(0.26, 0.67, 1, 0.47);
+  box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.card.flip {
+  transform: rotateY(-360deg);
+}
+
 /* Media Queries */
 @media only screen and (max-width: 680px) {
   main {
@@ -150,12 +168,9 @@ main {
 
   .title--h1 {
     font-size: 3rem;
+    color: white;
   }
 }
-
-/* .container--body {
-  width: 80%;
-} */
 
 footer {
   height: 8vh;
