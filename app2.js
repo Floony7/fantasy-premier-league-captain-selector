@@ -1,6 +1,5 @@
 // Elements
 const goButton = document.querySelector("[data-go-button]")
-const clearButton = document.querySelector("[data-clear-button]")
 const errorMsg = document.querySelector("[data-error]")
 const card = document.querySelector(".card")
 const playerInput = document.querySelector("[data-input]")
@@ -10,12 +9,7 @@ const captain = document.querySelector("[data-captain]")
 captain.innerHTML = "?"
 
 // Players to add array
-let players = JSON.parse(localStorage.getItem("players")) || []
-
-// Selected captain
-let selectedCaptain = ""
-
-const save = () => localStorage.setItem("players", JSON.stringify(players))
+const players = JSON.parse(localStorage.getItem("players")) || []
 
 // Event listeners
 goButton.addEventListener("click", (e) => {
@@ -45,8 +39,12 @@ const setMessage = (msg, msgColor) => {
 const populateList = (items = [], destination) => {
   // Populate playerList
   destination.innerHTML = items
-    .map((item, i) => {
-      return `<li class="item"><span class="material-icons delete">clear</span><span class="inner-text"> ${item}</span></li>`
+    .forEach((item) => {
+      const el = document.createElement("li")
+      const icon = `<span class="material-icons delete">clear</span>`
+      el.appendChild(icon)
+      el.textContent = item
+      playerList.appendChild(el)
     })
     .join("")
 }
@@ -59,8 +57,7 @@ const addPlayer = (e) => {
     const text = playerInput.value
     players.push(text)
     populateList(players, playerList)
-    // localStorage.setItem("players", JSON.stringify(players))
-    save()
+    localStorage.setItem("players", JSON.stringify(players))
     playerInput.value = ""
     /* const el = document.createElement("li")
     el.innerHTML = `<li class="item"><span class="material-icons delete">clear</span> ${text}</li>`
@@ -71,16 +68,9 @@ const addPlayer = (e) => {
 form.addEventListener("submit", addPlayer)
 
 // Clear player list
-const clearPlayerList = () => {
-  playerInput.value = ""
-  players = []
-  console.log(players)
-  // localStorage.setItem("players", JSON.stringify(players))
-  save()
-  populateList(players, playerList)
-}
+const clearPlayerList = (e) => {}
 
-clearButton.addEventListener("click", clearPlayerList)
+let selectedCaptain = ""
 
 // Select players to add to players array for selection
 const randomSelection = () => {
@@ -98,18 +88,10 @@ const randomSelection = () => {
 
 // Remove player
 const removePlayer = (e) => {
-  if (e.target.classList.contains("delete")) {
-    const text = e.target.nextSibling.textContent
-    let index = players.indexOf(text)
-    players.splice(index, 1)
-    console.log(players)
+  if (e.target.className === "delete") {
     e.target.parentElement.remove()
-    // localStorage.setItem("players", JSON.stringify(players))
-    save()
   }
 }
-
-playerList.addEventListener("click", removePlayer)
 
 // Display current year
 const yearEl = document.querySelector("#year")

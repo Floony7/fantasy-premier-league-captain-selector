@@ -54,16 +54,15 @@ body {
 } */
 
 .form-container {
-  padding-bottom: var(--p-1);
   width: 100%;
 }
 
 .player-form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  justify-content: space-around;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
 }
 
 .form-submit {
@@ -71,9 +70,25 @@ body {
   justify-content: center;
 }
 
-.input-field {
+#player-name {
   width: 100%;
   margin-bottom: 0;
+}
+
+.input-field {
+  margin-top: 0;
+  margin-right: 0;
+}
+
+button[data-submit-btn] {
+  margin-top: 15px;
+}
+
+/* Rendered player name*/
+
+.delete {
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .flex-card {

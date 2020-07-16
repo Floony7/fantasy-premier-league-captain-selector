@@ -54,9 +54,31 @@
       </section>
     </header>
     <main>
+      <section class="container container--body">
+        <div class="form-container">
+          <p class="center-align"><span class="error-msg center-align" data-error></span></p>
+          <p class="center-align">Add each player to the draw:</p>
+          <form class="col s12 player-form" data-form>
+            <div class="row" id="form-row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">person_add</i>
+                <input id="player-name" type="text" class="validate" data-input />
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="form-submit col s12"> -->
+            <button class="btn waves-effect waves-light btn-f purple darken-4" type="submit" name="submit" data-submit-btn>
+              Add player
+            </button>
+            <!-- </div>
+            </div> -->
+          </form>
+        </div>
+      </section>
       <section class="container--body-grid">
         <div class="players-list-container">
-          <p>Players in the mix: <span id="players-list" data-players-list></span></p>
+          <p>Players in the mix:</p>
+          <ul id="players-list" data-players-list></ul>
         </div>
         <div class="card-container">
           <div class="row-flex">
@@ -67,18 +89,19 @@
             </div>
           </div>
         </div>
-        <div class="go-button-container"><button class="btn waves-effect waves-light" data-go-button>Select My Captain!</button></div>
+        <div class="go-button-container"><button class="btn btn-small waves-effect waves-light" data-clear-button>Clear All</button></div>
+        <div class="go-button-container"><button class="btn btn-small waves-effect waves-light" data-go-button>Select Captain!</button></div>
       </section>
       <!-- End Card Container -->
-      <section class="full-width-container full-width-container--form">
+      <!--  <section class="full-width-container full-width-container--form">
         <div class="container container--body">
           <p class="center-align">Enter player's last name to add to the list</p>
           <div class="form-container">
-            <form class="col s12 player-form">
+            <form class="col s12 player-form" data-form>
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">person_add</i>
-                  <input id="last_name" type="text" class="validate" />
+                  <input id="last_name" type="text" class="validate" data-input />
                 </div>
               </div>
               <div class="row">
@@ -90,9 +113,8 @@
               </div>
             </form>
           </div>
-          <!-- End Form Container -->
         </div>
-      </section>
+      </section> -->
       <!-- End Form Container -->
       <!--   <section class="players p1">
           <h4>Player list</h4>
